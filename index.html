@@ -7,17 +7,23 @@
     <script defer src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body style="background-image: url(tile.jpg);">
-    <h1 style="display: grid;place-items: center ;">my task board</h1>
-    <div style="display: grid;place-items: center;">
-        <form id="newNoteForm" style="background-image: url(formbg.jpg);width: 400px;height: 200px;">
+<body>
+    <h1>my task board</h1>
+    <div id="newNoteDiv">
+        <form id="newNoteForm" >
             <br><br>
-            <input type="text" placeholder="Note Data">
+            <input id="noteData" type="text" placeholder="Note Data" onsubmit="addNote(event)">
             <br><br>
             <input type="date" id="targetDate" placeholder="Target Date">
             <br><br>
             <input type="time" id="targetTime" placeholder="Target Time">
+            <br><br>
+            <button onclick="addNote(event)" >add Note/mission</button><button onclick="cleanForm()">reset form</button>
          </form>
+    </div>
+    <div id="NoteList">
+        
+
     </div>
 </body>
 </html>

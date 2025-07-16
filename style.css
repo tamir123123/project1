@@ -1,0 +1,52 @@
+#newNoteForm{
+    background-image: url(formbg.jpg);
+    width: 400px;
+    height: 200px;
+}
+body{
+    background-image: url(tile.jpg);
+}
+h1{
+    display: grid;
+    place-items: center ;
+}
+#newNoteDiv{
+    display: grid;
+    place-items: center;
+}
+#noteView{
+    padding: 5px;
+    text-align: left;
+    background-image: url(notebg.png);
+    max-width: 170px;
+    max-height: 226px;
+    height: 213px;
+}
+#noteList{
+    text-align: center;
+    display: grid;
+    width: 250px;
+    grid-template-columns: repeat(3,200px);
+}
+textarea{
+    margin: 2px;
+    background-color: #feff99;
+    padding: 1px;
+    border: 0cm;
+    width: 160px;
+    height: 120px;
+    resize: none;
+}
+#deleteButton{
+    right: 100px;
+}
+#buttonDiv{
+    text-align: right;
+}
+#deleteButton {
+    display: none;
+}
+
+#noteView:hover #deleteButton{
+    display: inline-block; 
+}
