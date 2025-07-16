@@ -7,7 +7,17 @@
     <script defer src="app.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+<body style="background-image: url(tile.jpg);">
+    <h1 style="display: grid;place-items: center ;">my task board</h1>
+    <div style="display: grid;place-items: center;">
+        <form id="newNoteForm" style="background-image: url(formbg.jpg);width: 400px;height: 200px;">
+            <br><br>
+            <input type="text" placeholder="Note Data">
+            <br><br>
+            <input type="date" id="targetDate" placeholder="Target Date">
+            <br><br>
+            <input type="time" id="targetTime" placeholder="Target Time">
+         </form>
+    </div>
 </body>
 </html>
