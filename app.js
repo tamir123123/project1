@@ -2,7 +2,7 @@ function addNote(event){
     event.preventDefault();
     const data = collectDataFromForm();
     saveNoteToLocalStorage(data);
-    // cleanForm();
+    cleanForm();
     loadNotesFromStorage();
 }
 loadNotesFromStorage();
@@ -35,8 +35,8 @@ function saveNoteToLocalStorage(note) {
     localStorage.setItem("notes", JSON.stringify(notes));
 }
 function generateTR(data, index) {
-    const newTR = `<div id="noteView"><br><div id="buttonDiv"><button id="deleteButton" onclick="deleteNote(${index})">✖</button></div><br>
-            <textarea id="TextNoteData">${data.noteData}</textarea>            
+    const newTR = `<div class="noteView"><div class="buttonDiv"><button class="deleteButton" onclick="deleteNote(${index})"><i class="bi bi-x"></i></button></div>
+            <div class="text">${data.noteData}</div>            
         ${data.targetDate}<br>
         ${data.targetTime}
         </div>`
