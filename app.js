@@ -1,9 +1,28 @@
-function addNote(event){
+function addNote(event) {
     event.preventDefault();
     const data = collectDataFromForm();
     saveNoteToLocalStorage(data);
+    
+    // יצירת הפתק החדש
+    const notesJSON = localStorage.getItem("notes") || "[]";
+    const notes = JSON.parse(notesJSON);
+    const newIndex = notes.length - 1;
+    const newTR = generateTR(data, newIndex);
+    
+    // הוספה ישירות עם קלאס new-note
+    document.getElementById("NoteList").innerHTML += newTR.replace('<div class="noteView">', '<div class="noteView new-note" id="latest-note">');
+    
+    // הפעלת האפקט על הפתק עם ID
+     const latestNote = document.getElementById('latest-note');
+    setTimeout(() => {
+        latestNote.classList.add('fade-in');
+        setTimeout(() => {
+            latestNote.removeAttribute('id');
+            latestNote.classList.remove('new-note');
+        }, 500);
+    }, 50);
+    
     cleanForm();
-    loadNotesFromStorage();
 }
 loadNotesFromStorage();
 function loadNotesFromStorage() {

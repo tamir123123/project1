@@ -8,6 +8,14 @@ html, body {
 * {
     max-width: 100%;
 }
+.new-note {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
 #newNoteForm{
     background-image: url(formbg.jpg);
     width: 400px;
